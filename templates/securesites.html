@@ -8,32 +8,38 @@
     <link rel="stylesheet" href="css/style.css">
     <title>SecureSites</title> <!-- Website title -->
     <link rel="shortcut icon" href="img/securesite.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
 </head>
-<body>
-  <nav class="navbar navbar-expand-sm navbar-light fixed-top py-40 bg-primary" id="main-nav">
+<body class = "bg-primary">
+  <nav class="navbar navbar-expand-sm navbar-light fixed-top py-80 card bg-secondary text-white mb-3" id="main-nav">
     <div class="container">
-      <a href="securesites.html" class="navbar-brand">
+      <a href="securesites.html" class="navbar-brand my-auto">
         <img src="img/securesite.jpeg" alt=":)" width="50" height="50">
       </a>
       <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarcollapse">
         <span class="navbar-toggler-icon"></span>
       </button>
-    </div>
     <div class="collapse navbar-collapse" id="navbarcollapse">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item">
             <a href="Sign-In.html" class="nav-link">Sign In </a>
           </li>
           <li class="nav-item">
-            <a href="articles.html" class="nav-link"> Sign Up</a>
+            <a href="Sign-Up.html" class="nav-link"> Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a href="password-display.html" class="nav-link"> Password Display</a>
           </li>
         </ul>
       </div>
+    </div>
   </nav>
   <section id = "showcase">
     <div class = "container">
       <div class = "row">
-        <div class = "col-lg-12">
+        <div class = "col-lg-14">
           <div id = "slider1" class = "carousel slide mb-4" data-ride = "carousel">
             <ol class = "carousel-indicators">
               <li class = "active" data-target = "#slider1" data-slide-to = "0"></li>
@@ -44,11 +50,11 @@
                 <img class = "d-block img-fluid" src ="img/India-covid.jpeg">
                 <div class = "carousel-caption d-none d-md-block">
                   <h4 class = "text-light">OUR MESSAGE:</h4>
-                  <p class = "text-light">dicks n cocks</p>
+                  <p class = "text-light">honestly that sounds like a fair trade to me</p>
                 </div>
               </div>
               <div class = "carousel-item">
-                <img class = "d-block img-fluid" src ="img/George-floyd.jpeg">
+                <img class = "d-block img-fluid" src ="img/homepage.jpeg">
                 <div class = "carousel-caption d-none d-md-block">
                   <h4 class = "text-light">BLM</h4>
                   <p class = "text-light">protests erupt</p>
@@ -67,5 +73,48 @@
       </div>
     </div>
   </section>
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+      crossorigin="anonymous"></script>
+      <script>
+          // Get the current year for the copyright
+          $('#year').text(new Date().getFullYear());
 
+          // Init Scrollspy
+          $('body').scrollspy({ target: '#main-nav' });
+
+          // Smooth Scrolling
+          $("#main-nav a").on('click', function (event) {
+            if (this.hash !== "") {
+              event.preventDefault();
+
+              const hash = this.hash;
+
+              $('html, body').animate({
+                scrollTop: $(hash).offset().top
+              }, 800, function () {
+
+                window.location.hash = hash;
+              });
+            }
+          });
+        </script>
+        <script>
+          $('.carousel').carousel({
+            interval:3000,
+            keyboard: true, <!-- not working -->
+            pause: 'hover',
+            wrap: true,   <!--wrap option set to true works for moving images like in a round and when set to false movement stops after last pic and the only option left is to go back, same with first pic wont allow to go before first -->
+          });
+          $('#slider1').on('slide.bs.carousel', function(){
+            console.log('slide - this fires when img moves/takes off')
+          });
+
+          $('#slider1').on('slid.bs.carousel', function() {
+          console.log('slid - this fires when img stops')
+          });
+        </script>
 </body>
