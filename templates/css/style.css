@@ -2297,11 +2297,11 @@ textarea.form-control-lg {
   border-color: #89ABE3FF; }
   .btn-primary:hover {
     color: #fff;
-    background-color: #293829;
+    background-color: #195190FF;
     border-color: #263526; }
   .btn-check:focus + .btn-primary, .btn-primary:focus {
     color: #fff;
-    background-color: #293829;
+    background-color: #195190FF;
     border-color: #263526;
     box-shadow: 0 0 0 0.25rem rgba(79, 94, 79, 0.5); }
   .btn-check:checked + .btn-primary, .btn-check:active + .btn-primary, .btn-primary:active, .btn-primary.active, .show > .btn-primary.dropdown-toggle {
