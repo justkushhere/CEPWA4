@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
     <title>SecureSites</title> <!-- Website title -->
-    <link rel="shortcut icon" href="img/securesite.ico" />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/securesite.ico') }}" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
@@ -16,7 +17,7 @@
   <nav class="navbar navbar-expand-sm navbar-light fixed-top py-80 card bg-secondary text-white mb-3" id="main-nav">
     <div class="container">
       <a href="securesites.html" class="navbar-brand my-auto">
-        <img src="img/securesite.jpeg" alt=":)" width="50" height="50">
+        <img src="{{ url_for('static', filename='img/securesite.jpeg') }}" alt=":)" width="50" height="50">
       </a>
       <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarcollapse">
         <span class="navbar-toggler-icon"></span>
@@ -24,13 +25,13 @@
     <div class="collapse navbar-collapse" id="navbarcollapse">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item">
-            <a href="Sign-In.html" class="nav-link">Sign In </a>
+            <a href = "/login" class="nav-link">Sign In </a>
           </li>
           <li class="nav-item">
-            <a href="Sign-Up.html" class="nav-link"> Sign Up</a>
+            <a href="/signup" class="nav-link"> Sign Up</a>
           </li>
           <li class="nav-item">
-            <a href="password-display.html" class="nav-link"> Password Display</a>
+            <a href="/password_display" class="nav-link"> Password Display</a>
           </li>
         </ul>
       </div>
@@ -47,14 +48,14 @@
             </ol>
             <div class = "carousel-inner">
               <div class = "carousel-item active">
-                <img class = "d-block img-fluid" src ="img/hometwo.jpg">
+                <img class = "d-block img-fluid" src ="{{ url_for('static', filename='img/homeone.jpg') }}">
                 <div class = "carousel-caption d-none d-md-block">
                   <h4 class = "text-light">SecureSites</h4>
                   <p class = "text-light">The obvious choice for Professionals.</p>
                 </div>
               </div>
               <div class = "carousel-item">
-                <img class = "d-block img-fluid" src ="img/homeone.jpg">
+                <img class = "d-block img-fluid" src ="{{ url_for('static', filename='img/hometwo.jpg') }}">
                 <div class = "carousel-caption d-none d-md-block">
                   <h4 class = "text-light">SecureSites</h4>
                   <p class = "text-light">The obvious choice for Individuals.</p>
